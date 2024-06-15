@@ -8,6 +8,8 @@
 #include "joinDetach.h"
 #include "raceCondition.h"
 #include "deadlock.h"
+#include "readerWriter.h"
+#include "diningPhilosopher.h"
 using namespace std;
 
 int main() {
@@ -57,6 +59,31 @@ int main() {
 
 	t1.join();
 	t2.join();*/
+
+	/*vector<std::thread> readers, writers;
+
+	for (int i = 0; i < 5; i++) {
+		readers.push_back(thread(reader, i));
+		writers.push_back(thread(writer, i));
+	}
+
+	for (auto& t : readers) {
+		t.join();
+	}
+
+	for (auto& t : writers) {
+		t.join();
+	}*/
+
+	/*vector<thread> philosopher;
+
+	for (int i = 0; i < 5; i++) {
+		philosopher.push_back(thread(diningPhilospher, i));
+	}
+
+	for (auto& t : philosopher) {
+		t.join();
+	}*/
 
 	return 0;
 }

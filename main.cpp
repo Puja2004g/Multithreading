@@ -1,15 +1,19 @@
 #include <iostream>
 #include <thread>
 #include <vector>
-#include "createThread.h"
-#include "functionThread.h"
-#include "sharedAccess.h"
-#include "producerConsumer.h"
-#include "joinDetach.h"
-#include "raceCondition.h"
-#include "deadlock.h"
-#include "readerWriter.h"
-#include "diningPhilosopher.h"
+#include <future>
+
+//#include "createThread.h"
+//#include "functionThread.h"
+//#include "sharedAccess.h"
+//#include "producerConsumer.h"
+//#include "joinDetach.h"
+//#include "raceCondition.h"
+//#include "deadlock.h"
+//#include "readerWriter.h"
+//#include "diningPhilosopher.h"
+//#include "sumSquares.h"
+#include "factorial.h"
 using namespace std;
 
 int main() {
@@ -60,6 +64,7 @@ int main() {
 	t1.join();
 	t2.join();*/
 
+	//question 8
 	/*vector<std::thread> readers, writers;
 
 	for (int i = 0; i < 5; i++) {
@@ -75,6 +80,7 @@ int main() {
 		t.join();
 	}*/
 
+	//question 9
 	/*vector<thread> philosopher;
 
 	for (int i = 0; i < 5; i++) {
@@ -84,6 +90,24 @@ int main() {
 	for (auto& t : philosopher) {
 		t.join();
 	}*/
+
+	//question 10
+	/*std::promise<int> sum;
+	std::future<int> sumsq = sum.get_future();
+	
+	thread t1(sumsquares, std::move(sum), 5);
+
+	cout<<"Sum : " << sumsq.get() << endl;
+	t1.join();*/
+
+	//question 11
+	/*std::promise<int> fact;
+	std::future<int> factVal = fact.get_future();
+
+	thread t1(factorial, std::move(fact), 5);
+	t1.join();
+
+	cout << "Factorial: " << factVal.get();*/
 
 	return 0;
 }
